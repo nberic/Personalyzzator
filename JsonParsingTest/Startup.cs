@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 using JsonParsingTest.Services;
+using JsonParsingTest.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace JsonParsingTest
 {
@@ -29,7 +31,10 @@ namespace JsonParsingTest
         {
             services.AddControllers();
             services.AddLogging();
-            services.AddSingleton<IPersonService, SimplePersonService>();
+            services.AddScoped<IPersonService, SimplePersonService>();
+
+            services.AddDbContext<PersonContext>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("PostgresConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -59,6 +59,10 @@ namespace JsonParsingTest.Controllers
         public ActionResult<Person> Update(Guid personId, [ FromBody ] Person person)
         {
             _logger.LogInformation($"PUT: { personId } - { person }");
+            if (personId != person.PersonId)
+            {
+                return BadRequest();
+            }
 
             #nullable enable
             Person? updatedPerson = _personService.Update(personId, person);
