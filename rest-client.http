@@ -1,0 +1,38 @@
+@url=https://127.0.0.1:5001/api/person
+
+###
+# Get all the persons
+GET {{url}}
+
+###
+# Get a specific person
+GET {{url}}/41e848e3-a26f-495b-ad40-03dc7270582b
+
+###
+# Add a person
+POST {{url}}
+Content-Type: application/json
+
+{
+    "FirstName": "Nemanja",
+    "LastName": "Beric",
+    "Gender": 0,
+    "BandNumber": 1
+}
+
+###
+# Update a specific person
+PUT {{url}}/00b183cc-557e-4c6c-a8e6-de4332fd3801
+Content-Type: application/json
+
+{
+    "FirstName": "Noemie",
+    "LastName": "Dendieu",
+    "Gender": 1,
+    "BandNumber": 0,
+    "Birthday": "2020-03-19T23:00:00.000Z"
+}
+
+###
+# Delete a specific person
+DELETE {{url}}/41e848e3-a26f-495b-ad40-03dc7270582b
