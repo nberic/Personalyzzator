@@ -1,16 +1,52 @@
-@url=https://127.0.0.1:5001/api/person
+@personApiUrl=https://127.0.0.1:5001/api/person
+@authorApiUrl=https://127.0.0.1:5001/api/authors
+
+
+###
+# Get all authors
+GET {{authorApiUrl}}
+
+###
+# Get a specific author
+GET {{authorApiUrl}}/95664794-c790-4daf-a931-93dc79cd5bd2
+
+###
+# Create an author
+POST {{authorApiUrl}}
+Content-Type: application/json
+
+{
+    "FirstName": "Nemanja",
+    "LastName": "Beric"
+}
+
+###
+# Update a specific author
+PUT {{authorApiUrl}}/95664794-c790-4daf-a931-93dc79cd5bd2
+Content-Type: application/json
+
+{
+    "AuthorId": "95664794-c790-4daf-a931-93dc79cd5bd2",
+    "FirstName": "Ivo",
+    "LastName": "Andric"
+}
+
+###
+# Delete a specific author
+DELETE {{authorApiUrl}}/95664794-c790-4daf-a931-93dc79cd5bd2
+
 
 ###
 # Get all the persons
-GET {{url}}
+GET {{personApiUrl}}
 
 ###
 # Get a specific person
-GET {{url}}/358f4598-370f-4360-9a10-1a4b1693536e
+GET {{personApiUrl}}/358f4598-370f-4360-9a10-1a4b1693536e
 
 ###
 # Add a person
-POST {{url}}
+POST {{personApiUrl}}
 Content-Type: application/json
 
 {
@@ -22,7 +58,7 @@ Content-Type: application/json
 
 ###
 # Update a specific person
-PUT {{url}}/358f4598-370f-4360-9a10-1a4b1693536e
+PUT {{personApiUrl}}/358f4598-370f-4360-9a10-1a4b1693536e
 Content-Type: application/json
 
 {
@@ -36,4 +72,4 @@ Content-Type: application/json
 
 ###
 # Delete a specific person
-DELETE {{url}}/b48bcdb9-aacb-4aa6-9746-2ed96eda9285
+DELETE {{personApiUrl}}/b48bcdb9-aacb-4aa6-9746-2ed96eda9285
