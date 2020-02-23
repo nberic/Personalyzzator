@@ -83,7 +83,7 @@ namespace BokSjelf.Controllers
                 return NotFound($"No such Author: { authorId }");
             }
             _logger.LogInformation($"{ new DateTime() } -> DELETE: Returned - Requested deletion of Author with GUID { authorId }.");
-            return deletedAuthor;
+            return Ok(deletedAuthor);
         }
     }
 }
