@@ -31,7 +31,7 @@ namespace JsonParsingTest
         {
             services.AddControllers();
             services.AddLogging();
-            services.AddScoped<IPersonService, SimplePersonService>();
+            services.AddScoped<IPersonService, PostgresPersonService>();
 
             services.AddDbContext<PersonContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("PostgresConnection")));

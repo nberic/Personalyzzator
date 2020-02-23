@@ -6,7 +6,7 @@ GET {{url}}
 
 ###
 # Get a specific person
-GET {{url}}/41e848e3-a26f-495b-ad40-03dc7270582b
+GET {{url}}/358f4598-370f-4360-9a10-1a4b1693536e
 
 ###
 # Add a person
@@ -22,10 +22,11 @@ Content-Type: application/json
 
 ###
 # Update a specific person
-PUT {{url}}/00b183cc-557e-4c6c-a8e6-de4332fd3801
+PUT {{url}}/358f4598-370f-4360-9a10-1a4b1693536e
 Content-Type: application/json
 
 {
+    "PersonId": "358f4598-370f-4360-9a10-1a4b1693536e",
     "FirstName": "Noemie",
     "LastName": "Dendieu",
     "Gender": 1,
@@ -35,4 +36,4 @@ Content-Type: application/json
 
 ###
 # Delete a specific person
-DELETE {{url}}/41e848e3-a26f-495b-ad40-03dc7270582b
+DELETE {{url}}/b48bcdb9-aacb-4aa6-9746-2ed96eda9285
