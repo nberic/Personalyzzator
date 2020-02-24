@@ -73,6 +73,13 @@ namespace BokSjelf.Controllers
             return Ok(updatedAuthor);
         }
 
+        [HttpPatch("{authorId}")]
+        public ActionResult<string> PatchAuthor(Guid authorId, [ FromBody ] Author author)
+        {
+            var birthDate = author.BirthDate;
+            return Ok(birthDate);
+        }
+
         [HttpDelete("{authorId}")]
         public async Task<ActionResult<Author>> DeleteAuthor(Guid authorId)
         {

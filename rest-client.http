@@ -8,7 +8,7 @@ GET {{authorApiUrl}}
 
 ###
 # Get a specific author
-GET {{authorApiUrl}}/95664794-c790-4daf-a931-93dc79cd5bd2
+GET {{authorApiUrl}}/781b55da-fe2b-4a93-8552-97c7e39907f6
 
 ###
 # Create an author
@@ -29,6 +29,16 @@ Content-Type: application/json
     "AuthorId": "95664794-c790-4daf-a931-93dc79cd5bd2",
     "FirstName": "Ivo",
     "LastName": "Andric"
+}
+
+###
+# Patch a specific author
+PATCH {{authorApiUrl}}/781b55da-fe2b-4a93-8552-97c7e39907f6
+Content-Type: application/json
+
+{
+    "AuthorId": "781b55da-fe2b-4a93-8552-97c7e39907f6",
+    "BirthDate": "2020-02-24T19:36:36.881Z"
 }
 
 ###
