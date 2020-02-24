@@ -24,8 +24,9 @@ namespace BokSjelf.Controllers
         public async Task<ActionResult<IEnumerable<Author>>> GetAllAuthors()
         {
             _logger.LogInformation($"{ new DateTime() } -> GET: Requested all Authors.");
+            var allAuthors = await _authorService.GetAllAuthorsAsync();
             _logger.LogInformation($"{ new DateTime() } -> GET: Returned - Requested all Authors.");
-            return Ok(await _authorService.GetAllAuthorsAsync());
+            return Ok(allAuthors);
         }
 
         [HttpGet("{authorId}")]
